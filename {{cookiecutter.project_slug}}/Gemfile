@@ -11,3 +11,12 @@ gem "rubocop-shopify", require: false
 gem "rubocop-performance", require: false
 gem "rubocop-rake", require: false
 
+{% if cookiecutter.test_framework_to_use|lower == 'minitest' -%}
+# Minitest
+gem "minitest"
+gem "minitest-reporters"
+gem "mocha"
+{% elif cookiecutter.test_framework_to_use|lower == 'rspec' -%}
+# Rspec
+gem "rspec", require: false
+{% endif -%}

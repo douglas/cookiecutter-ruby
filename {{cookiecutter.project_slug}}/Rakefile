@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require "rake/testtask"
 require "rubocop/rake_task"
 
 RuboCop::RakeTask.new do |task|
@@ -7,3 +8,12 @@ RuboCop::RakeTask.new do |task|
   task.requires << "rubocop-rake"
 end
 
+Rake::TestTask.new do |task|
+  {% if cookiecutter.test_framework_to_use|lower == 'minitest' -%}
+  task.libs << "test"
+  task.test_files = FileList["test/**/*_test.rb"]
+  {%- elif cookiecutter.test_framework_to_use|lower == 'rspec' -%}
+  task.libs << "spec"
+  task.test_files = FileList["spec/**/*_spec.rb"]{% endif %}
+  task.verbose = false
+end

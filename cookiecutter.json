@@ -1,4 +1,5 @@
 {
   "project_name": "Example Ruby Project",
-  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}"
+  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+  "test_framework_to_use": ["Minitest", "Rspec"]
 }
