@@ -1,0 +1,9 @@
+require:
+  - rubocop-performance
+  - rubocop-rake
+
+inherit_gem:
+  rubocop-shopify: rubocop.yml
+
+AllCops:
+  NewCops: enable

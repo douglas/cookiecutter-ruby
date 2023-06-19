@@ -1,0 +1,27 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+insert_final_newline = true
+max_line_length = 72
+tab_width = 4
+trim_trailing_whitespace = true
+
+[*.rb]
+indent_size = 2
+
+[Rakefile]
+indent_size = 2
+
+[Gemfile]
+indent_size = 2
+
+[*.md]
+# Four spaces are defined as the unit of indentation.
+indent_size = 4
+
+[*.json]
+indent_size = 4
+
